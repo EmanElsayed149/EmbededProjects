@@ -1,0 +1,23 @@
+13:33:37 **** Incremental Build of configuration Debug for project ToogleLed ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ToogleLed.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Eman\study\embeddedsystem\Learn-In-Depth\unit3EmbeddedC\lesson1\codeexamples\ToogleLed\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ToogleLed.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ToogleLed.elf
+ 
+arm-none-eabi-size   ToogleLed.elf 
+arm-none-eabi-objdump -h -S  ToogleLed.elf  > "ToogleLed.list"
+arm-none-eabi-objcopy  -O ihex  ToogleLed.elf  "ToogleLed.hex"
+   text	   data	    bss	    dec	    hex	filename
+    672	     12	   1564	   2248	    8c8	ToogleLed.elf
+arm-none-eabi-objcopy  -O binary  ToogleLed.elf  "ToogleLed.bin"
+Finished building: default.size.stdout
+ 
+Finished building: ToogleLed.hex
+Finished building: ToogleLed.bin
+ 
+Finished building: ToogleLed.list
+ 
+ 
+
+13:33:38 Build Finished. 0 errors, 0 warnings. (took 630ms)
+

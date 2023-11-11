@@ -1,0 +1,24 @@
+!SESSION 2023-11-11 08:33:55.581 -----------------------------------------------
+eclipse.buildId=Version 1.13.0
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-11 08:35:17.148
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-11 08:35:17.155
+!MESSAGE Log4j2 initialized with config file E:\Eman\study\embeddedsystem\Learn-In-Depth\unit3EmbeddedC\lesson1\codeexamples\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-11 08:36:13.364
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-11-11 12:20:10.689
+!MESSAGE Indexed 'ToogleLed' (3 sources, 53 headers) in 3.84 sec: 1,950 declarations; 2,831 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-11-11 13:17:33.117
+!MESSAGE Indexed 'ToogleLed' (3 sources, 53 headers) in 0.384 sec: 1,960 declarations; 2,855 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-11-11 13:17:40.697
+!MESSAGE Indexed 'ToogleLed' (3 sources, 53 headers) in 0.333 sec: 1,960 declarations; 2,855 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
