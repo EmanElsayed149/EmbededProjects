@@ -4,7 +4,7 @@ Learn In Depth
 by : Eman Elsayed 
 
 */
-ENTRY(_reset)
+
 MEMORY
 {
    flash(RX) : ORIGIN = 0x08000000, LENGTH = 128k 
