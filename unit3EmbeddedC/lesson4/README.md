@@ -1,5 +1,5 @@
 
-### LAB3
+## LAB3
 #### Baremetal sw on TM4C123 ARM CortexM4 to toggle green led connected on PF3 
 - it's required to make stack size = 1k 
 - it's required to write startup file in c 
@@ -97,7 +97,11 @@ SECTIONS
 	
 	
 #### output 
-https://github.com/EmanElsayed149/Learn-In-Depth/blob/main/unit3EmbeddedC/lesson4/debug.mp4
+
+
+https://github.com/EmanElsayed149/Learn-In-Depth/assets/91433516/8d464245-11fc-4dd2-be3e-f2b03fd8b5a7
+
+
 #### files to be downloaded :
 1. Keil_uvision_unit3_lab4_project
 2. startup.c 
