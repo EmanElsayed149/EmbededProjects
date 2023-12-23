@@ -82,7 +82,7 @@ SECTIONS
 
 ## Mapfile 
 - as shown : 
-![mapfile](C:\Users\Dell\OneDrive\Pictures\Screenshots\1.png)
+![mapfile](1.png)
 	- .vectors section : there is ptr_to_handlervectors (to initialize sp , vectorhandlers) at 0x00000000
 	- all vectorshandlers except reset  at the same address ....although each has its own function ?! ..... because I used weak and alias definition to save memory 
 	```
@@ -91,7 +91,7 @@ SECTIONS
 	```
 	void HFaultHandler(void)     __attribute__((weak,alias("DefaultHandler")));;
 	```
-- ![mapfile](C:\Users\Dell\OneDrive\Pictures\Screenshots\2.png)
+- ![mapfile](2.png)
 	- load address of _E_text = load address of _S_data 
 	- sizeof bss = 0x400 = 1024 byte = 1 k = space of stack 
 	
