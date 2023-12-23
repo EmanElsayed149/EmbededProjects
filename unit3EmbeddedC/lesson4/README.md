@@ -97,7 +97,7 @@ SECTIONS
 	
 	
 #### output 
-![debug](debug.mp4)
+![debug](https://github.com/EmanElsayed149/Learn-In-Depth/blob/main/unit3EmbeddedC/lesson4/debug.mp4)
 #### files to be downloaded :
 1. Keil_uvision_unit3_lab4_project
 2. startup.c 
