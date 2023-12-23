@@ -97,7 +97,7 @@ SECTIONS
 	
 	
 #### output 
-
+![](debug.mp4)
 #### files to be downloaded :
 1. Keil_uvision_unit3_lab4_project
 2. startup.c 
