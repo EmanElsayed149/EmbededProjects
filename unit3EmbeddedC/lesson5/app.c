@@ -1,0 +1,80 @@
+/**
+ ******************************************************************************
+ * @file           : main.c
+ * @author         : Eman Elsayed
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2023 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
+
+#include <stdint.h>
+#include <stdlib.h>
+#define RCC_BASE       0X40021000
+#define GPIOA_BASE     0X40010800
+#define RCC_APB2ENR    *(volatile uint32_t*)(RCC_BASE + 0X18)
+#define GPIOA_CRH      *(volatile uint32_t*)(GPIOA_BASE + 0X04)
+#define GPIOA_ODR      *(volatile uint32_t*)(GPIOA_BASE + 0X0C)
+
+//bit fields
+#define RCC_IOPAEN  (1<<2)
+#define GPIOA13    (1<<13)
+
+typedef union
+{
+	uint32_t allpins;
+	struct
+	{
+		uint32_t reserved:13;
+		uint32_t p_13:1;
+	}pin;
+}R_ODR_T;
+
+volatile R_ODR_T* R_ODR = (volatile R_ODR_T*)(GPIOA_BASE+0X0C);
+
+
+/*_sbrk definition compatable with cortexm3*/
+void *_sbrk(uint32_t inc)
+{
+	static uint8_t* heap_ptr= NULL;
+	extern uint32_t* _E_bss;   /*defined in linker script*/
+	extern uint32_t* _heap_End;   /*defined in linker script*/
+	uint8_t *pre_ptr = NULL;          /*to return it as the start address of allocated space */
+	
+	/*check if this is the first allocation or not*/
+	if(heap_ptr==NULL)
+		heap_ptr = (uint8_t*)&_E_bss;
+	pre_ptr = heap_ptr;
+	
+	/*protect heap pfrom growing into the reserved stack*/
+	if( (heap_ptr + inc) > (uint8_t*)&_heap_End )
+		return (void*)NULL;
+	heap_ptr += inc ;
+	return (void*)pre_ptr;
+	
+}
+int main(void)
+{
+	uint32_t *ptr = (uint32_t*)malloc(sizeof(uint32_t));
+	RCC_APB2ENR |= RCC_IOPAEN;
+	GPIOA_CRH   &= 0XFF0FFFFF;
+	GPIOA_CRH   |= 0X00200000;
+    /* Loop forever */
+	int i;
+	while(1)
+	{
+		R_ODR->pin.p_13 =1;
+		for(i=0;i<50000;i++);  //delay
+		R_ODR ->pin.p_13 = 0;
+		for(i=0;i<50000;i++); //delay
+	}
+	free(ptr);
+}
