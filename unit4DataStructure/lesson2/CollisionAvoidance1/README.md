@@ -1,6 +1,6 @@
 ### Simple implementation Collision Avoidance 
 
-**note : it based on onen module **
+***note : it based on one module***
 #### files :
 - CA.h : header file to declare CA_states functions   
 - CA.c : source file to switch between states
